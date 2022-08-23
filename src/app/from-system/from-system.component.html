@@ -1,0 +1,23 @@
+<form class="form" [formGroup]="contactForm" (submit)="sendEmail()">
+    <input type="text" placeholder="Name" required formControlName="to_name" />
+  
+    <input
+      type="text"
+      placeholder="Email address that want to receive from system"
+      formControlName="email_id"
+      required
+    />
+    <textarea
+      formControlName="message"
+      required
+      class="input"
+      rows="5"
+      placeholder="Message..."
+    ></textarea>
+    <div class="btnContainer">
+      <button [disabled]="contactForm.invalid" type="submit" value="Send">
+        Send from system
+      </button>
+    </div>
+  </form>
+  
